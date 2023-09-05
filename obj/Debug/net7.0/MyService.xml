@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MyService</name>
+    </assembly>
+    <members>
+        <member name="M:MyService.Controllers.SalaryController.#ctor(Microsoft.Extensions.Logging.ILogger{MyService.Controllers.SalaryController})">
+            <summary>
+            Журнал событий
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="M:MyService.Controllers.SalaryController.Post(MyService.Personal)">
+            <summary>
+            Обновление данных
+            </summary>
+            <param name="p">Персональные данные</param>
+        </member>
+        <member name="M:MyService.Controllers.SalaryController.PatchUpdate(System.String,System.String,System.String)">
+            <summary>
+            Обновление значений
+            </summary>
+            <param name="field">Поле</param>
+            <param name="value">Значение</param>
+        </member>
+        <member name="P:MyService.Personal.Id">
+            <summary>
+            Id в базе данных
+            </summary>
+        </member>
+        <member name="P:MyService.Personal.SNA">
+            <summary>
+            ФИО пользователя
+            </summary>
+        </member>
+        <member name="P:MyService.Personal.Departament">
+            <summary>
+            Отдел работы
+            </summary>
+        </member>
+        <member name="P:MyService.Personal.BirthDate">
+            <summary>
+            Дата рождения
+            </summary>
+        </member>
+        <member name="P:MyService.Personal.StartToWorkDate">
+            <summary>
+            Дата начала работы в должности
+            </summary>
+        </member>
+        <member name="P:MyService.Personal.EndToWorkDate">
+            <summary>
+            Дата увольнения
+            </summary>
+        </member>
+        <member name="P:MyService.Personal.Salary">
+            <summary>
+            Размер заработной платы
+            </summary>
+        </member>
+    </members>
+</doc>
