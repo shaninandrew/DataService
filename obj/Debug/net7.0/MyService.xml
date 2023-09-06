@@ -10,6 +10,12 @@
             </summary>
             <param name="logger"></param>
         </member>
+        <member name="M:MyService.Controllers.SalaryController.Get(System.String,System.Nullable{System.Int32})">
+            <summary>
+            Возвращает список сотрудников
+            </summary>
+            <returns>Возвращается коллекция записей</returns>
+        </member>
         <member name="M:MyService.Controllers.SalaryController.Post(MyService.Personal)">
             <summary>
             Обновление данных

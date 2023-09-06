@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Sqlite;
+using System.Data.Entity;
 
 namespace MyService.Controllers
 {
@@ -31,22 +32,33 @@ namespace MyService.Controllers
 
         }
 
-       
-        [HttpGet(Name = "GetPersonal")]
         /// <summary>
         /// Возвращает список сотрудников
         /// </summary>
-        /// <returns></returns>
-        public async Task<IEnumerable<Personal>> Get(string? id)
+        /// <returns>Возвращается коллекция записей</returns>
+        [HttpGet(Name = "GetPersonal")]
+        public async Task<IEnumerable<Personal>> Get(string? id, int? limit)
         {
 
-            if (id == null)
+          
+          
+            if (limit.HasValue)
             {
-                return  await db.Personals.ToArrayAsync();
+                Console.WriteLine($"Get last {limit.Value} rows");
+                //синхро код
+                IQueryable<Personal> o = db.Personals.Take<Personal>(limit.Value);
+                Personal[] a = o.ToArray();
+                return a; 
+            }
+            else
+            if (id!=null)
+            {
+                return await db.Personals.Where(p => p.Id.Equals(id)).ToArrayAsync();
             }
             else
             {
-                return await db.Personals.Where(p=> p.Id.Equals(id)).ToArrayAsync();
+                return await db.Personals.ToArrayAsync();
+                
             }
             
             
