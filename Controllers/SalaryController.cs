@@ -34,31 +34,78 @@ namespace MyService.Controllers
 
         /// <summary>
         /// Возвращает список сотрудников
+        /// 
         /// </summary>
-        /// <returns>Возвращается коллекция записей</returns>
+        /// <param name="id">id записи</param>
+        /// <param name="limit"> размер </param>
+        /// <param name="sort"> поле </param>
+        /// <returns></returns>
         [HttpGet(Name = "GetPersonal")]
-        public async Task<IEnumerable<Personal>> Get(string? id, int? limit)
+        public async Task<IEnumerable<Personal>> Get(string? id, int? limit, string? sort)
         {
 
-          
-          
-            if (limit.HasValue)
+            if (sort == null)
             {
-                Console.WriteLine($"Get last {limit.Value} rows");
-                //синхро код
-                IQueryable<Personal> o = db.Personals.Take<Personal>(limit.Value);
-                Personal[] a = o.ToArray();
-                return a; 
+                sort = "SNA";
             }
-            else
-            if (id!=null)
+
+
+            if (id != null)
             {
                 return await db.Personals.Where(p => p.Id.Equals(id)).ToArrayAsync();
             }
             else
             {
-                return await db.Personals.ToArrayAsync();
-                
+
+                switch (sort.ToLower())
+                {
+                    case "salary":
+                        if (limit.HasValue)
+                            return await Task.FromResult(db.Personals.OrderBy(p => p.Salary).Take<Personal>(limit.Value));
+                        else
+                            return await Task.FromResult(db.Personals.OrderBy(p => p.Salary).ToArray());
+                        break;
+
+                    case "sna":
+                        if (limit.HasValue)
+                            return await Task.FromResult(db.Personals.OrderBy(p => p.SNA).Take<Personal>(limit.Value));
+                        else
+                            return await Task.FromResult(db.Personals.OrderBy(p => p.SNA).ToArray());
+                        break;
+
+                    case "starttoworkdate":
+                        if (limit.HasValue)
+                            return await Task.FromResult(db.Personals.OrderBy(p => p.StartToWorkDate).Take<Personal>(limit.Value));
+                         else
+                            return await Task.FromResult(db.Personals.OrderBy(p => p.StartToWorkDate).ToArray());
+                        break;
+
+                    case "departament":
+                        if (limit.HasValue)
+                            return await Task.FromResult(db.Personals.OrderBy(p => p.Departament).Take<Personal>(limit.Value));
+                        else
+                            return await Task.FromResult(db.Personals.OrderBy(p => p.Departament).ToArray());
+                        break;
+
+                    case "birthdate":
+                        if (limit.HasValue)
+                            return await Task.FromResult(db.Personals.OrderBy(p => p.BirthDate).Take<Personal>(limit.Value));
+                        else
+                            return await Task.FromResult(db.Personals.OrderBy(p => p.BirthDate).ToArray());
+                        break;
+
+                    case "endtoworkdate":
+                        if (limit.HasValue)
+                            return await Task.FromResult(db.Personals.OrderBy(p => p.EndToWorkDate).Take<Personal>(limit.Value));
+                        else
+                            return await Task.FromResult(db.Personals.OrderBy(p => p.EndToWorkDate).ToArray());
+                        break;
+
+                }
+
+                //По дефолту без сортировку
+                return await Task.FromResult(db.Personals.ToArray());
+
             }
             
             
