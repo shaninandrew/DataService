@@ -361,3 +361,17 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/!Program-storage.db-wal
+/!Program-storage.db-shm
+/obj/Debug/net7.0/MyService.dll
+/obj/Debug/net7.0/MyService.pdb
+/obj/Debug/net7.0/ref/MyService.dll
+/obj/Debug/net7.0/refint/MyService.dll
+/obj/Debug/net7.0/MyService.assets.cache
+/obj/Debug/net7.0/MyService.csproj.AssemblyReference.cache
+/obj/Debug/net7.0/MyService.csproj.FileListAbsolute.txt
+/obj/Debug/net7.0/MyService.xml
+/!Program-storage.db
+/obj/MyService.csproj.nuget.dgspec.json
+/obj/project.assets.json
+/obj/project.nuget.cache
