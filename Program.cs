@@ -17,10 +17,9 @@ namespace MyService
         {
             var builder = WebApplication.CreateBuilder(args);
 
-          
             builder.Services.AddControllers();
 
-            builder.Services.AddControllers().ConfigureApiBehaviorOptions( options =>
+            builder.Services.AddControllers().ConfigureApiBehaviorOptions(options =>
             {
                 // To preserve the default behavior, capture the original delegate to call later.
                 var builtInFactory = options.InvalidModelStateResponseFactory;
@@ -62,19 +61,19 @@ namespace MyService
                     options.DefaultModelExpandDepth(3);
                     options.EnableDeepLinking();
                     //options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
-                   // options.RoutePrefix = string.Empty;
-                   // options.SerializeAsV2 = true;
-                   // options.SerializeAsV2 = true;
+                    // options.RoutePrefix = string.Empty;
+                    // options.SerializeAsV2 = true;
+                    // options.SerializeAsV2 = true;
                 });
 
-                
+
 
             }
 
             app.UseHttpsRedirection();
             app.UseAuthorization();
             app.MapControllers();
-            
+
             /*
              * if (!ModelState.IsValid)
             {

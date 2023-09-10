@@ -2739,28 +2739,25 @@
       "Microsoft.AspNetCore.OpenApi >= 7.0.10",
       "Microsoft.EntityFrameworkCore.Sqlite >= 7.0.10",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 7.0.4",
-      "Swashbuckle.AspNetCore >= 6.5.0"
+      "Swashbuckle.AspNetCore >= 6.5.0",
+      "Swashbuckle.AspNetCore.SwaggerGen >= 6.5.0",
+      "Swashbuckle.AspNetCore.SwaggerUI >= 6.5.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ARM16.ORELARHPLAN\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\hedge\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\проекты\\служба данных\\SalaryService Sample\\MyService.csproj",
+      "projectUniqueName": "G:\\работа\\Angular Salary Sample\\MyService.csproj",
       "projectName": "MyService",
-      "projectPath": "C:\\проекты\\служба данных\\SalaryService Sample\\MyService.csproj",
-      "packagesPath": "C:\\Users\\ARM16.ORELARHPLAN\\.nuget\\packages\\",
-      "outputPath": "C:\\проекты\\служба данных\\SalaryService Sample\\obj\\",
+      "projectPath": "G:\\работа\\Angular Salary Sample\\MyService.csproj",
+      "packagesPath": "C:\\Users\\hedge\\.nuget\\packages\\",
+      "outputPath": "G:\\работа\\Angular Salary Sample\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\ARM16.ORELARHPLAN\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\hedge\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2803,6 +2800,14 @@
             "version": "[7.0.4, )"
           },
           "Swashbuckle.AspNetCore": {
+            "target": "Package",
+            "version": "[6.5.0, )"
+          },
+          "Swashbuckle.AspNetCore.SwaggerGen": {
+            "target": "Package",
+            "version": "[6.5.0, )"
+          },
+          "Swashbuckle.AspNetCore.SwaggerUI": {
             "target": "Package",
             "version": "[6.5.0, )"
           }

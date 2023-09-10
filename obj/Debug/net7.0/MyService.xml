@@ -10,17 +10,28 @@
             </summary>
             <param name="logger"></param>
         </member>
-        <member name="M:MyService.Controllers.SalaryController.Get(System.String,System.Nullable{System.Int32})">
+        <member name="M:MyService.Controllers.SalaryController.Get(System.String,System.Nullable{System.Int32},System.String,System.Nullable{System.Boolean})">
             <summary>
             Возвращает список сотрудников
+            
             </summary>
-            <returns>Возвращается коллекция записей</returns>
+            <param name="id">id записи</param>
+            <param name="limit"> размер </param>
+            <param name="sort"> поле сортировки </param>
+            <param name="desc"> обратная сортировки </param>
+            <returns>Список записией в БД</returns>
         </member>
         <member name="M:MyService.Controllers.SalaryController.Post(MyService.Personal)">
             <summary>
             Обновление данных
             </summary>
             <param name="p">Персональные данные</param>
+        </member>
+        <member name="M:MyService.Controllers.SalaryController.Delete(System.String)">
+            <summary>
+            Удаляет запись из базы данных по Id
+            </summary>
+            <param name="id">ID удаляемой записи</param>        
         </member>
         <member name="M:MyService.Controllers.SalaryController.PatchUpdate(System.String,System.String,System.String)">
             <summary>
